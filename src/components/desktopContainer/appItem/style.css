@@ -1,0 +1,45 @@
+.app-item-wrap {
+    background-color: white;
+    width: 120px;
+    height: 120px;
+    margin: 22px;
+    float: left;
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.app-item-wrap.removable {
+    animation: shake 0.82s linear infinite;
+}
+
+.app-item-wrap.removable .del-icon{
+    display: block;
+}
+
+.del-icon {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: red;
+    cursor: pointer;
+}
+@keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }

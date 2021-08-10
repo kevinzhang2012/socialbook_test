@@ -1,0 +1,25 @@
+.desktop-container {
+    height: 850px;
+    display: table;
+    padding: 20px 0 0 0;
+}
+
+@media (min-width: 1000px) {
+    .desktop-container {
+        width: 1000px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .desktop-container {
+        width: 830px;
+    }
+}
+
+.sort-container {
+    display: table;
+}
+
+.carousel.carousel-slider {
+    padding: 0 0 20px 0;
+}
