@@ -30,15 +30,23 @@ export const DesktopContainer = () => {
 
 const SortablePage = ((props: { items: AppList }) => {
     const [appList, setAppList] = useState(props.items);
+    const [isDragging, setIsDragging] = useState(false);
 
-    return <div onMouseDown={(e) => { e.stopPropagation() }} onMouseUp={(e) => { e.stopPropagation() }}><ReactSortable
+    return <div style={{margin: '0 1vw'}} onMouseDown={(e) => { e.stopPropagation() }} onMouseUp={(e) => { e.stopPropagation() }}><ReactSortable
         group="test"
         list={appList} setList={setAppList}
         animation={200}
-        delay={2}
+        delayOnTouchOnly
+        delay={100}
+        onStart={(evt) =>  {
+            setIsDragging(true);
+        }}
+        onEnd={(evt) => {
+            setIsDragging(false);
+        }}
     >
         {appList.map((app, index) => {
-            return <AppItem key={app.id} name={app.name} icon={app.icon} onDel={() => {
+            return <AppItem key={app.id} isDragging={isDragging} name={app.name} icon={app.icon} onDel={() => {
                 setAppList((prevAppList) => {
                     const newList = prevAppList.slice();
                     newList.splice(index, 1);
