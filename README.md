@@ -1,4 +1,6 @@
 # Socialbook Test
+[Deployed Demo](https://kevinzhang2012.github.io/socialbook_test/)
+
 Simulate an iOS desktop that includes features:
 1. Drag n drop app icons and re-sort them.
 2. Long press to enable the shake animation and allow deleting.
@@ -10,7 +12,7 @@ based on React + TypeScript
 comp lib: react-sortablejs
 
 # Directory
-|_ components // React组件
-    |_ deskTopContainer // 容器组件
-        |_ appItem // 普通子组件
-|_ models // 数据模型
+- components // React组件
+ - deskTopContainer // 容器组件
+    - appItem // 普通子组件
+- models // 数据模型
